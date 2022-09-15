@@ -1,31 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import MapView, { PROVIDER_GOOGLE }  from 'react-native-maps';
+import MapView from 'react-native-maps';
 
 export default function App() {
   return (
-    <View>
-      <Text>Run Down Royale</Text>
-      <StatusBar style="auto" />
     <View style={styles.container}>
+      <Text>Run Down Royale</Text>
       <MapView
-        style={{ flex: 1 }}
-        showsUserLocation={true}
+        style={styles.map}
         initialRegion={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-      }}
-  />
-    </View>
+          latitude: 41.82249,
+          longitude: -71.39833,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    ...StyleSheet.absoluteFillObject,
     flex: 1,
-    backgroundColor: '#fff',
+    justifyContent: "flex-end",
     alignItems: 'center',
-    justifyContent: 'center',
   },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  }
 });
+
